@@ -25,9 +25,9 @@ SECRET_KEY = 'django-insecure-uijatzjjgt8-%yjq%$qxtpr2du0wg@2v(5!#p%s%h3kvcr$s3y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 # Email settings
-
+CORS_ORIGIN_ALLOW_ALL = True
 EMAIL_USE_TLS = True  
 EMAIL_HOST = 'smtp.gmail.com'  
 EMAIL_PORT = 587  
@@ -48,16 +48,11 @@ INSTALLED_APPS = [
     'corsheaders',
 ]
 
-CORS_ORIGIN_WHITELIST = (
-    'http://127.0.0.1:8000',
-    'http://127.0.0.1', # 不写端口，默认80
-)
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -114,26 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-CORS_ALLOW_METHODS  =  [ 
-    'DELETE' ,
-    'GET' ,
-    'OPTIONS' ,
-    'PATCH' ,
-    'POST' ,
-    'PUT' ,
-]
 
-CORS_ALLOW_HEADERS  =  [ 
-    'accept' ,
-    'accept-encoding' ,
-    'authorization' ,
-    'content-type' ,
-    'dnt' ,
-    'origin' ,
-    'user-agent' ,
-    'x-csrftoken' ,
-    'x-requested-with',
-]
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
