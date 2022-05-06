@@ -48,7 +48,10 @@ INSTALLED_APPS = [
     'corsheaders',
 ]
 
-CORS_ORIGIN_ALLOW_ALL  = True
+CORS_ORIGIN_WHITELIST = (
+    'http://127.0.0.1:8000',
+    'http://127.0.0.1', # 不写端口，默认80
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
