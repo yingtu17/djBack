@@ -7,9 +7,9 @@ from users.models import Users
 
 
 def register(request):
-    name = request.POST.get('')
-    passw = request.POST.get('')
-    passw_r = request.POST.get('')
+    name = request.POST.get('name')
+    passw = request.POST.get('passw')
+    passw_r = request.POST.get('passw_r')
     if passw != passw_r:
         return HttpResponse('Password not matched')
     client = Users(username=name,password = passw)
